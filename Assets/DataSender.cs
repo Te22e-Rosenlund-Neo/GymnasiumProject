@@ -9,23 +9,23 @@ using UnityEngine.PlayerLoop;
 
 public class DataSender : MonoBehaviour
 {
-    public string data1;
-    public string data2;
+    public string Color;
+    public string HTT;
     
-    private string FormUrl = "LINK to google forms";
+    private string FormUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdThm9CLWU5He9L-JWUU1weJpFZHVE-b4y8lFheFAFQSsZ7Jg/formResponse";
 
 
-    public void SubmitFeedback(){
+    public void SendDataValues(){
 
-        StartCoroutine(Post(data1, data2));
+        StartCoroutine(Post(Color, HTT));
             }
 
 
     private IEnumerator Post(string data1, string data2){
 
         WWWForm form = new WWWForm();
-        form.AddField("entry.XXXXX", data1);
-        form.AddField("entry.YYYYY", data2);
+        form.AddField("entry.1978531111", data1);
+        form.AddField("entry.300462831", data2);
 
         using(UnityWebRequest www= UnityWebRequest.Post(FormUrl, form)){
             
