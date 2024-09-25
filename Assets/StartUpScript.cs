@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class StartUpScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public Camera Camera1;    
+    void Awake()
     {
+        Color[] backgrounds = {Color.red, Color.green, Color.blue, Color.black};
+
+        Color SetBackground = backgrounds[Random.Range(0, backgrounds.Length -1)];
         
+        Camera1.backgroundColor = SetBackground;
     }
 }
+
+
