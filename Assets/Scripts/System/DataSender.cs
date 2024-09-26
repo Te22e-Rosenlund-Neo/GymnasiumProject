@@ -33,12 +33,18 @@ public class DataSender : MonoBehaviour
 
             if(www.result == UnityWebRequest.Result.Success){
                 Debug.Log("Data sent successfully");
+                PlayerPrefs.SetInt("TimesPlayer", 1);
             }else{
                 Debug.LogError("An error occurred:" + www.error);
             }
         }
     }
 
+    public void SetHTT(string value){
+
+        HTT = value;
+        SendDataValues();
+    }
 
 
 
